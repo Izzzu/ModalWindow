@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<!--<script type="javascript" src="./index.js"></script>-->
+
+<button id="btn">Open window</button>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+</div>
+<script>
+    console.log("Js file");
+    var modal = document.getElementById("modal");
+
+    var btn = document.getElementById("btn");
+
+    var closeSpan = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => {
+        console.log("btn onclick");
+        modal.style.display = "block";
+
+    }
+
+    closeSpan.onclick = () => {
+        modal.style.display = "none";
+        console.log("closeSpan onclick");
+
+    }
+
+    window.onclick = (e) => {
+        if(e.target == modal) {
+            modal.style.display = "none";
+            console.log("window onclick");
+
+        }
+    }
+</script>
+</body>
+</html>
